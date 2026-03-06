@@ -22,9 +22,19 @@ open class Highlight: Object {
     @objc open dynamic var startOffset: Int = -1
     @objc open dynamic var endOffset: Int = -1
     @objc open dynamic var noteForHighlight: String?
+    @objc open dynamic var chapterName: String?
 
     override open class func primaryKey()-> String {
         return "highlightId"
+    }
+
+    /// Returns position dictionary for bookmark navigation
+    open func getPosition() -> [String: Any] {
+        return [
+            "pageNumber": page,
+            "startOffset": startOffset,
+            "endOffset": endOffset
+        ]
     }
 }
 

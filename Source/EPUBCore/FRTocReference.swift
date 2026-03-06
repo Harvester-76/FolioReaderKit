@@ -9,7 +9,7 @@
 import UIKit
 
 open class FRTocReference: NSObject {
-    var children: [FRTocReference]!
+    public var children: [FRTocReference]!
 
     public var title: String!
     public var resource: FRResource?
