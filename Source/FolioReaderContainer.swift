@@ -176,6 +176,7 @@ open class FolioReaderContainer: UIViewController {
                 }
             } catch {
                 weakSelf.errorOnLoad = true
+                weakSelf.folioReader.delegate?.folioReader?(weakSelf.folioReader, didFailLoadingWithError: error)
                 weakSelf.alert(message: error.localizedDescription)
             }
         }
